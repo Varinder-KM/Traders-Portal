@@ -43,7 +43,8 @@ INSTALLED_APPS = [
 ]
 
 EXTERNAL_APPS = [
-    'accounts'
+    'accounts',
+    'company',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS+EXTERNAL_APPS
@@ -136,3 +137,5 @@ FIREBASE_SERVICE_ACCOUNT_KEY_PATH = '../traders-portal-a6187-firebase-adminsdk-2
 
 cred = credentials.Certificate(FIREBASE_SERVICE_ACCOUNT_KEY_PATH)
 firebase_admin.initialize_app(cred)
+
+API_BASE_URL = 'http://127.0.0.1:8000/api'

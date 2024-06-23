@@ -33,9 +33,8 @@ def post_login(requests):
             return redirect('/accounts/login')
         
         else:
-            rev_url = reverse('companies',args=[])
             login(requests, user)
-            return redirect(rev_url)
+            return redirect('/company/')
 
 
 

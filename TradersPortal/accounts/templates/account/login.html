@@ -22,16 +22,18 @@
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             padding: 16px 16px;
         }
-       #btns{
+        #btns{
             display: flex;
-            flex-direction: column; 
+            
             align-items: center;
             gap: 10px; 
             margin-top: 20px;
        }
        button{
-        width: 200px;
+        width: 100%;
+        margin: auto;
        }
+
 
        .navbar-inverse {
       background-color: #333;
@@ -75,8 +77,8 @@
 
     <div class="form-container">
         <div id="login-form">
+            <h2>Log in</h2>
             <form action="/accounts/postlogin/" method="post" >
-                <h2>Log in</h2>
                 {% csrf_token %}
                 <hr>
                 {% if messages %}
@@ -99,13 +101,13 @@
                 <span>Don't have an account? <a href="/accounts/signup/">Signup</a></span>
                 <br>
                 <br>
-                <div id="btns">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <h5>------------ or -----------</h5>
-                    <button id="google-login-button" class="btn btn-success">Login with Google</button>
-                </div>
-                
+               
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
+            <br>
+                <h5>---------------------- or ---------------------</h5>
+                <br>
+                <button id="google-login-button" class="btn btn-success">Login with Google</button>
         </div>      
     </div>
     
