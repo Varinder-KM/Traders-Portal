@@ -23,6 +23,7 @@ def companies(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def add_comapny(request):
     serializer = CompanySerializer(data=request.data)
     if serializer.is_valid():
@@ -34,7 +35,7 @@ def add_comapny(request):
 @api_view(['POST'])
 def search_company(request):
     if request.method == 'POST':
-        c_name = request.POST.get('company_name')
+        c_name = request.data.get('company_name')
         cmps = CompanyModel.objects.filter(company_name=c_name)
         serializer = CompanySerializer(cmps, many=True)
         return Response(serializer.data)

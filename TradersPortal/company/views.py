@@ -19,8 +19,9 @@ def index(request):
 
 def search(request):
     if request.method == 'POST':
-        data = request.POST.get('company_name')
+        data = {'company_name': request.POST.get('company_name')}
         response = requests.post(f'{settings.API_BASE_URL}/search_company/', data=data)
+        print(response)
         companies = response.json() if response.status_code == 200 else []
         context = {'comp': companies}
         return render(request, 'company/index.html', context)
