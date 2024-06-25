@@ -139,3 +139,10 @@ cred = credentials.Certificate(FIREBASE_SERVICE_ACCOUNT_KEY_PATH)
 firebase_admin.initialize_app(cred)
 
 API_BASE_URL = 'http://127.0.0.1:8000/api'
+
+# Session settings
+SESSION_COOKIE_AGE = 1209600  # Two weeks in seconds
+SESSION_COOKIE_SECURE = False  # Use False if not using HTTPS
+
+# Default is database-backed sessions
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'

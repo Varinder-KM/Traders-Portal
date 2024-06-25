@@ -70,6 +70,7 @@ def post_signup(requests):
 
 def logout_page(request):
     logout(request)
+    print(request.user)
     return redirect('/accounts/login')
 
 

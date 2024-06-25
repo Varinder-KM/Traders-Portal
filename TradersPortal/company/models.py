@@ -13,7 +13,9 @@ class company_model(models.Model):
 
 class watchlist_model(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    company = models.ForeignKey(company_model, on_delete=models.CASCADE)
+    company_name = models.TextField(null=True)
+    symbol = models.CharField(max_length=200, null=True)
+    scripcode = models.IntegerField(null=True)
 
     def __str__(self):
-        return f"{self.user.username}'s watchlist: {self.company.company_name}"
+        return f"{self.user.username}'s watchlist: {self.company_name}"
